@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3練習</title>
+    <style>
+        html{
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <!-- 雙向綁定，在瀏覽器中v-model修改文字，會顯示在msg的文字中 -->
+        <div class="msg">{{message}}</div>
+        <button @click="count++">
+            Count is: {{ count }}
+        </button>
+        <p v-show="isShow">Go Quokka</p>
+        <button v-if="!isLogin">登入</button>
+        <p v-else="">歡迎回來</p>
+        <ul>
+            <li v-for="fruits in items">{{fruits}}</li>
+        </ul>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        // import { createApp, ref } from 'vue'
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                return {
+                    count: ref(0),
+                    message: ref("RACHA get spotlight"),
+                    isShow: ref(true), //換成false則go quokka會消失(不顯示)
+                    isLogin: ref(false), //true會顯示歡迎回來，換成false則會改為出現登入按鈕(二擇一出現)
+                    items: ref(["berry", "melon", "kiwi"]),
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
