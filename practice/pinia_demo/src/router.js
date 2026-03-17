@@ -3,12 +3,13 @@ import ProductItem from './components/ProductItem.vue';
 import Axios from './components/Axios.vue';
 
 const routes = [
-    {path: '/', name: 'Products', component: ProductItem}, 
+    {path: '/', name: 'products', component: ProductItem}, 
     {path: '/axios', name: 'axios', component: Axios}, 
 ]
 const router = createRouter ({
     routes, 
-    history: createWebHistory()
-})
+    history: createWebHistory(),
+});
 
 export default router
+

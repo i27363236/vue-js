@@ -1,6 +1,7 @@
 <script setup>
+
 import ProductItem from './components/ProductItem.vue'
-import Axios from './components/Axios.vue'
+
 </script>
 
 <template>
@@ -9,19 +10,16 @@ import Axios from './components/Axios.vue'
       <div class="col-10">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <router-link to="." class="nav-link active">
+            <router-link to="/" class="nav-link active">
               Pinia購物車
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/" class="nav-link active">Axios Demo</router-link>
+            <router-link to="/axios" class="nav-link active">Axios Demo</router-link>
           </li>
         </ul>
       </div>
-      <div class="col-10">
-        <router-view></router-view>
-      </div>
-
+      <router-view></router-view>
     </div>
   </div>
   <ProductItem />
