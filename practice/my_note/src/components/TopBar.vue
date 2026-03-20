@@ -8,10 +8,9 @@ const router = useRouter()
 const keyword = ref('')
 
 async function searchNotes(){
-    const results = await noteStore.searchNotes(keyword.value)
-    if(results.length > 0){
-        router.push({ name: 'search'})
-    }
+    const results = await noteStore.searchNotes(keyword.value);
+    console.log(results);
+    router.push({ name: 'search', params: { searchResults: results}})
 }
 </script>
 
@@ -20,6 +19,7 @@ async function searchNotes(){
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <router-link class="navbar-brand" to="/"><img src="../../public/logo.png" alt="" class="logo">MyNote</router-link>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form class="d-flex ms-auto" @submit.prevent="searchNotes">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="keyword"/>

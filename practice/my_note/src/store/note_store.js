@@ -64,7 +64,7 @@ export const useNoteStore = defineStore(
                 note.content = new_content
                 return true
             },
-            searchNote(keyword){
+            searchNotes(keyword){
                 this.searchResults = this.notes.filter(note => note.title.includes(keyword) || note.content.includes(keyword))
                 console.log(this.searchResults);
             },
