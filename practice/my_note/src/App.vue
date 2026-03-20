@@ -20,8 +20,8 @@ import NoteList from './components/NoteList.vue';
         <router-view></router-view>
       </div>
 
-      <footer class="col-12">
-        <p>copyright&copy;Meowie.com</p>
+      <footer class="fixed-bottom">
+        <p>copyright&copy;Quokkahan.com</p>
       </footer>
 
     </div>
@@ -31,7 +31,11 @@ import NoteList from './components/NoteList.vue';
 <style>
 footer{
   height: 50px;
-  background-color: steelblue;
+  width: 100%;
+  background-color: rgb(44, 84, 117);
+  text-align: center;
+}
+footer p{
   color: white;
   line-height: 50px;
 }
